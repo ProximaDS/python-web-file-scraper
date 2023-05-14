@@ -33,4 +33,42 @@ This script bypasses SSL certificate verification. This can help if you're downl
 
 Simply run the script, and when prompted, provide the URL from where the files are to be downloaded and the directory where you want the files to be stored.
 
-This script is intended to be a utility for downloading specific file types from a URL. It can be particularly useful for batch downloading files from a webpage.
+This script is intended to be a utility for downloading specific file types from a URL. It can be particularly useful for batch downloading files from a webpage.\
+
+## Additional Instructions for Installing and Using wget
+
+### Linux
+
+Wget is a free utility available for Unix-like operating systems. Most Linux distributions have wget installed by default. If not, you can install it using your distribution's package manager. For example, on Ubuntu, you can install wget by opening a terminal and typing:
+
+```
+sudo apt-get install wget
+```
+
+### Windows
+
+Windows users can download wget from the GNU Win32 project page (http://gnuwin32.sourceforge.net/packages/wget.htm) or install it via a package manager like Chocolatey.
+
+To install wget using Chocolatey, first, install Chocolatey by following the instructions at https://chocolatey.org/install. Once Chocolatey is installed, you can install wget by opening a command prompt (cmd.exe) as an administrator and typing:
+
+```
+choco install wget
+```
+
+### macOS
+
+On macOS, you can install wget using Homebrew. If you don't have Homebrew installed, you can install it by pasting the following command in a macOS Terminal prompt:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Once Homebrew is installed, you can install wget by typing:
+
+```
+brew install wget
+```
+
+### Using wget in the script
+
+Once wget is installed, it can be used directly in the command line or through subprocess calls in a script, as seen in this repository. The script constructs a wget command and uses subprocess.run() to download the target file. If the download fails, an exception is raised, logged, and the incomplete file is removed.
