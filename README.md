@@ -25,10 +25,6 @@ To run the script, you'll need Python installed on your machine along with the f
 
 Please note that this script uses wget for downloading files, so you need to have it installed on your machine.
 
-## Disclaimer
-
-This script bypasses SSL certificate verification. This can help if you're downloading from a site with a certificate that isn't trusted, but should be used with caution as it does not validate the identity of the server.
-
 ## How to Use
 
 Simply run the script, and when prompted, provide the URL from where the files are to be downloaded and the directory where you want the files to be stored.
@@ -47,7 +43,7 @@ sudo apt-get install wget
 
 ### Windows
 
-Windows users can download wget from the GNU Win32 project page (http://gnuwin32.sourceforge.net/packages/wget.htm) or install it via a package manager like Chocolatey.
+Windows users can download wget from the GNU (https://eternallybored.org/misc/wget/) or install it via a package manager like Chocolatey.
 
 To install wget using Chocolatey, first, install Chocolatey by following the instructions at https://chocolatey.org/install. Once Chocolatey is installed, you can install wget by opening a command prompt (cmd.exe) as an administrator and typing:
 
@@ -72,3 +68,7 @@ brew install wget
 ### Using wget in the script
 
 Once wget is installed, it can be used directly in the command line or through subprocess calls in a script, as seen in this repository. The script constructs a wget command and uses subprocess.run() to download the target file. If the download fails, an exception is raised, logged, and the incomplete file is removed.
+
+## Disclaimer
+
+This script bypasses SSL certificate verification. This can help if you're downloading from a site with a certificate that isn't trusted, but should be used with caution as it does not validate the identity of the server.
