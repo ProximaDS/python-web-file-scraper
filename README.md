@@ -1,2 +1,36 @@
-# python-web-file-scraper
-This Python script automates batch downloading of PDF, DOC, DOCX, XLS, XLSX files from a provided URL. It creates directories as needed, logs skipped files, and handles download errors. Requires Python, BeautifulSoup, urllib, unidecode, and wget.
+# Repository Description
+
+## General Information
+
+This repository contains a Python script designed to automate the process of downloading specific file types from a given webpage. The script is capable of handling PDF, DOC, DOCX, XLS, and XLSX file formats. The user will be prompted to input the URL from which the files will be downloaded, and the directory where they will be stored.
+
+## Functionality
+
+The script works by sending a GET request to the provided URL, then using the BeautifulSoup library to parse the HTML content of the page. It looks for links ending with the specified file types (.pdf, .docx, .doc, .xls, .xlsx), and then attempts to download each file using the wget command.
+
+If the specified directory for storing the files does not exist, the script automatically creates it. The script also keeps a log of any files that were skipped during the download process in a file named "skipped_files.log". This helps the user understand if any files were not downloaded and why.
+
+In case a file download fails, the script logs the filename and the current timestamp to both the console and the log file. Then, it deletes the incomplete file.
+
+To avoid overloading the server with rapid successive requests, the script incorporates a brief pause (0.2 seconds) between file downloads.
+
+## Prerequisites
+
+To run the script, you'll need Python installed on your machine along with the following Python packages:
+
+- os, time, subprocess, requests, ssl, logging, datetime for core functionalities
+- urllib for parsing and decoding URLs
+- BeautifulSoup for parsing the HTML content of a webpage
+- unidecode for converting non-ASCII characters into their closest ASCII equivalents
+
+Please note that this script uses wget for downloading files, so you need to have it installed on your machine.
+
+## Disclaimer
+
+This script bypasses SSL certificate verification. This can help if you're downloading from a site with a certificate that isn't trusted, but should be used with caution as it does not validate the identity of the server.
+
+## How to Use
+
+Simply run the script, and when prompted, provide the URL from where the files are to be downloaded and the directory where you want the files to be stored.
+
+This script is intended to be a utility for downloading specific file types from a URL. It can be particularly useful for batch downloading files from a webpage.
